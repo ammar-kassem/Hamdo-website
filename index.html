@@ -4,324 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
   <title>حمدو الدلال</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <style>
-    /* ========================================
-       المتغيرات العامة
-    ======================================== */
-    :root {
-      --gold: #d4af37;
-      --gold-light: #f4e3a1;
-      --gold-dark: #8a6a1c;
-      --bg: #050403;
-      --surface: #0c0a08;
-    }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      position: relative;
-      min-height: 100vh;
-      background-color: var(--bg);
-      color: #ffffff;
-      font-family: 'Noto Kufi Arabic', sans-serif;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    /* ========================================
-       خلفية ذهبية دقيقة + توهج مركزي
-    ======================================== */
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    body::before {
-      background-image:
-        repeating-linear-gradient(115deg,
-          transparent 0px, transparent 90px,
-          rgba(212, 175, 55, 0.055) 91px, rgba(212, 175, 55, 0.055) 92px),
-        repeating-linear-gradient(25deg,
-          transparent 0px, transparent 140px,
-          rgba(212, 175, 55, 0.035) 141px, rgba(212, 175, 55, 0.035) 142px),
-        radial-gradient(ellipse 70% 45% at 50% 8%,
-          rgba(212, 175, 55, 0.10), transparent 70%);
-    }
-
-    body::after {
-      background: linear-gradient(100deg,
-          transparent 30%,
-          rgba(212, 175, 55, 0.05) 48%,
-          rgba(244, 227, 161, 0.09) 50%,
-          rgba(212, 175, 55, 0.05) 52%,
-          transparent 70%);
-      background-size: 300% 300%;
-      animation: bg-shimmer 16s ease-in-out infinite;
-      mix-blend-mode: screen;
-    }
-
-    @keyframes bg-shimmer {
-      0%   { background-position: 0% 0%; }
-      50%  { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
-    }
-
-    /* ========================================
-       القسم الأول (Hero)
-    ======================================== */
-    .hero {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 56rem;
-      margin: 0 auto;
-      padding: clamp(3.5rem, 9vw, 6.5rem) clamp(1.25rem, 5vw, 3rem) clamp(3rem, 8vw, 5.5rem);
-      text-align: center;
-    }
-
-    /* شارة صغيرة أعلى العنوان */
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 1.1rem;
-      margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      border-radius: 999px;
-      background: linear-gradient(180deg, rgba(212, 175, 55, 0.08), transparent);
-      color: var(--gold-light);
-      font-size: clamp(0.7rem, 1.4vw, 0.8rem);
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      opacity: 0;
-      animation: reveal 0.8s ease forwards;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--gold);
-      box-shadow: 0 0 8px rgba(212, 175, 55, 0.9);
-    }
-
-    /* العنوان */
-    .hero h2 {
-      margin: 0;
-      max-width: 44rem;
-      font-size: clamp(1.6rem, 1.05rem + 2.6vw, 3rem);
-      line-height: 1.55;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-      opacity: 0;
-      animation: reveal 0.9s ease 0.12s forwards;
-    }
-
-    .en-accent {
-      font-family: 'Cinzel', serif;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      background: linear-gradient(135deg, var(--gold-light), var(--gold) 55%, var(--gold-dark));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      padding: 0 0.1em;
-    }
-
-    @keyframes reveal {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ========================================
-       إطار الفيديو الفاخر
-    ======================================== */
-    .video-wrap {
-      position: relative;
-      width: 100%;
-      max-width: 40rem;
-      margin-top: clamp(2.25rem, 6vw, 3.5rem);
-      opacity: 0;
-      animation: reveal 0.9s ease 0.28s forwards;
-    }
-
-    .video-frame {
-      position: relative;
-      border-radius: 1.25rem;
-      padding: 3px;
-      background: linear-gradient(135deg, var(--gold-dark), var(--gold) 45%, var(--gold-light) 55%, var(--gold-dark));
-      box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.65),
-        0 0 40px rgba(212, 175, 55, 0.18);
-    }
-
-    .video-frame__inner {
-      position: relative;
-      border-radius: calc(1.25rem - 3px);
-      overflow: hidden;
-      background: var(--surface);
-      aspect-ratio: 16 / 9;
-    }
-
-    .video-frame__inner video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      pointer-events: none;
-    }
-
-    /* زوايا زخرفية صغيرة تعطي طابع الأُطر الفاخرة */
-    .video-corner {
-      position: absolute;
-      width: 22px;
-      height: 22px;
-      border: 2px solid var(--gold-light);
-      opacity: 0.9;
-      z-index: 2;
-    }
-
-    .video-corner--tl { top: -8px; right: -8px; border-left: none; border-bottom: none; border-radius: 0 6px 0 0; }
-    .video-corner--tr { top: -8px; left: -8px; border-right: none; border-bottom: none; border-radius: 6px 0 0 0; }
-    .video-corner--bl { bottom: -8px; right: -8px; border-left: none; border-top: none; border-radius: 0 0 6px 0; }
-    .video-corner--br { bottom: -8px; left: -8px; border-right: none; border-top: none; border-radius: 0 0 0 6px; }
-
-    /* ========================================
-       زر الحجز
-    ======================================== */
-    .btn-gold {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: clamp(2.25rem, 6vw, 3.5rem);
-      font-family: 'Noto Kufi Arabic', sans-serif;
-      font-weight: 800;
-      font-size: clamp(0.95rem, 1.6vw, 1.15rem);
-      color: #201603;
-      text-decoration: none;
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 45%, var(--gold-dark) 100%);
-      padding: clamp(0.9rem, 2vw, 1.05rem) clamp(2.5rem, 6vw, 3.5rem);
-      border: none;
-      border-radius: 999px;
-      box-shadow:
-        0 0 15px rgba(212, 175, 55, 0.55),
-        0 0 35px rgba(212, 175, 55, 0.3),
-        0 10px 25px rgba(0, 0, 0, 0.5);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-      overflow: hidden;
-      isolation: isolate;
-      cursor: pointer;
-      animation: reveal 0.9s ease 0.4s forwards, pulse-glow 2.4s ease-in-out 1.4s infinite;
-      opacity: 0;
-    }
-
-    .btn-gold::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      z-index: -1;
-      border-radius: inherit;
-      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
-      filter: blur(10px);
-      opacity: 0.7;
-    }
-
-    .btn-gold::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: -150%;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.75), transparent);
-      transform: skewX(-20deg);
-      animation: shine 2.8s ease-in-out 1.4s infinite;
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-3px) scale(1.04);
-      box-shadow:
-        0 0 25px rgba(212, 175, 55, 0.75),
-        0 0 55px rgba(212, 175, 55, 0.5),
-        0 14px 30px rgba(0, 0, 0, 0.55);
-    }
-
-    .btn-gold:focus-visible {
-      outline: 2px solid var(--gold-light);
-      outline-offset: 4px;
-    }
-
-    @keyframes pulse-glow {
-      0%, 100% {
-        box-shadow:
-          0 0 15px rgba(212, 175, 55, 0.55),
-          0 0 35px rgba(212, 175, 55, 0.3),
-          0 10px 25px rgba(0, 0, 0, 0.5);
-      }
-      50% {
-        box-shadow:
-          0 0 25px rgba(212, 175, 55, 0.8),
-          0 0 55px rgba(212, 175, 55, 0.5),
-          0 10px 25px rgba(0, 0, 0, 0.5);
-      }
-    }
-
-    @keyframes shine {
-      0%   { right: -150%; }
-      45%  { right: 120%; }
-      100% { right: 120%; }
-    }
-
-    /* ========================================
-       تقليل الحركة لمن يفضّل ذلك
-    ======================================== */
-    @media (prefers-reduced-motion: reduce) {
-      body::after,
-      .btn-gold,
-      .btn-gold::after,
-      .eyebrow,
-      .hero h2,
-      .video-wrap {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-      }
-    }
-
-    /* ========================================
-       الشاشات الصغيرة جداً
-    ======================================== */
-    @media (max-width: 380px) {
-      .hero h2 { line-height: 1.5; }
-      .video-corner { width: 16px; height: 16px; }
-    }
-  </style>
 </head>
 
 <body class="bg-black">
 
+<!-- hero -->
   <section class="hero">
     <span class="eyebrow"> حمدو الدلال</span>
 
@@ -353,7 +48,7 @@
         disableremoteplayback
       >
         <source
-          src="https://drive.google.com/uc?export=download&id=1xsAomgMGqUhodDuON30jlYEn5orrSTov"
+          src="https://drive.google.com/file/d/1xsAomgMGqUhodDuON30jlYEn5orrSTov/view"
           type="video/mp4"
         >
       </video>
@@ -362,6 +57,204 @@
 </div>
     <button class="btn-gold">احجز الآن</button>
   </section>
+
+
+<!-- ========== قسم: موثّق من قبل ========== -->
+<section class="verified">
+  <div class="verified__head">
+    <h2 class="verified__title">موثّق من قبل..</h2>
+    <span class="verified__divider"></span>
+  </div>
+
+  <div class="verified__viewport">
+    <div class="verified__track">
+
+      <!-- كرت -->
+      <article class="v-card">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=12" alt="">
+          <span class="v-card__badge" aria-label="حساب موثّق">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Ahmed Fashion</span>
+          <span class="v-card__count">440K</span>
+        </div>
+      </article>
+
+      <article class="v-card">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=32" alt="">
+          <span class="v-card__badge" aria-label="حساب موثّق">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Sara Beauty</span>
+          <span class="v-card__count">3.2M</span>
+        </div>
+      </article>
+
+      <article class="v-card">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=51" alt="">
+          <span class="v-card__badge" aria-label="حساب موثّق">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Omar Fit</span>
+          <span class="v-card__count">890K</span>
+        </div>
+      </article>
+
+      <article class="v-card">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=45" alt="">
+          <span class="v-card__badge" aria-label="حساب موثّق">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Layla Store</span>
+          <span class="v-card__count">1.4M</span>
+        </div>
+      </article>
+
+      <article class="v-card">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=15" alt="">
+          <span class="v-card__badge" aria-label="حساب موثّق">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Khaled Tech</span>
+          <span class="v-card__count">675K</span>
+        </div>
+      </article>
+
+      <article class="v-card">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=25" alt="">
+          <span class="v-card__badge" aria-label="حساب موثّق">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Nour Studio</span>
+          <span class="v-card__count">2.1M</span>
+        </div>
+      </article>
+
+      <!-- ===== نسخة مكررة من نفس الكروت لضمان حركة سلايدر متواصلة بدون فراغات ===== -->
+      <article class="v-card" aria-hidden="true">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=12" alt="">
+          <span class="v-card__badge">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Ahmed Fashion</span>
+          <span class="v-card__count">440K</span>
+        </div>
+      </article>
+
+      <article class="v-card" aria-hidden="true">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=32" alt="">
+          <span class="v-card__badge">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Sara Beauty</span>
+          <span class="v-card__count">3.2M</span>
+        </div>
+      </article>
+
+      <article class="v-card" aria-hidden="true">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=51" alt="">
+          <span class="v-card__badge">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Omar Fit</span>
+          <span class="v-card__count">890K</span>
+        </div>
+      </article>
+
+      <article class="v-card" aria-hidden="true">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=45" alt="">
+          <span class="v-card__badge">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Layla Store</span>
+          <span class="v-card__count">1.4M</span>
+        </div>
+      </article>
+
+      <article class="v-card" aria-hidden="true">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=15" alt="">
+          <span class="v-card__badge">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Khaled Tech</span>
+          <span class="v-card__count">675K</span>
+        </div>
+      </article>
+
+      <article class="v-card" aria-hidden="true">
+        <div class="v-card__avatar">
+          <img src="https://i.pravatar.cc/150?img=25" alt="">
+          <span class="v-card__badge">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none">
+              <path d="M5 12.5L9.5 17L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <div class="v-card__meta">
+          <span class="v-card__name">Nour Studio</span>
+          <span class="v-card__count">2.1M</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
 </body>
 
