@@ -306,7 +306,7 @@
     }
 
 
-  /* ========================================
+/* ========================================
      قسم: موثّق من قبل
   ======================================== */
   .verified {
@@ -345,6 +345,7 @@
 
   /* منفذ العرض: يخفي الفائض ويعطي تلاشي ناعم عند الحواف */
   .verified__viewport {
+    direction: ltr;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -374,7 +375,7 @@
     display: flex;
     align-items: center;
     gap: 0.85rem;
-    width: clamp(190px, 22vw, 240px);
+    width: clamp(225px, 60vw, 240px);
     padding: 0.9rem 1.1rem;
     background: #1c1c1e;
     border: 1px solid rgba(212, 175, 55, 0.12);
