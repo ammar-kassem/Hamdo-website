@@ -1,0 +1,28 @@
+
+
+
+<div class="video-wrap">
+  <div class="video-frame">
+    <span class="video-corner video-corner--tl"></span>
+    <span class="video-corner video-corner--tr"></span>
+    <span class="video-corner video-corner--bl"></span>
+    <span class="video-corner video-corner--br"></span>
+
+    <div class="video-frame__inner">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        disablepictureinpicture
+        disableremoteplayback
+      >
+        <source
+          src="https://drive.google.com/file/d/1xsAomgMGqUhodDuON30jlYEn5orrSTov/view"
+          type="video/mp4"
+        >
+      </video>
+    </div>
+  </div>
+</div>

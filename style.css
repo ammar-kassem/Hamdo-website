@@ -170,7 +170,7 @@
       aspect-ratio: 16 / 9;
     }
 
-    .video-frame__inner video {
+    .video-frame__inner iframe {
       position: absolute;
       inset: 0;
       width: 100%;
