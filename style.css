@@ -123,7 +123,8 @@
       animation: reveal 0.9s ease 0.12s forwards;
     }
 
-    .en-accent {
+   
+   .en-accent {
       font-family: 'Cinzel', serif;
       font-weight: 600;
       letter-spacing: 0.5px;
