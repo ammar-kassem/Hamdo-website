@@ -68,21 +68,49 @@
       100% { background-position: 0% 0%; }
     }
 
-    /* ========================================
+    
+/* ========================================
        القسم الأول (Hero)
     ======================================== */
-    .hero {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 56rem;
-      margin: 0 auto;
-      padding: clamp(3.5rem, 9vw, 6.5rem) clamp(1.25rem, 5vw, 3rem) clamp(3rem, 8vw, 5.5rem);
-      text-align: center;
-    }
+.hero {
+  position: relative;
+  z-index: 1;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  width: 100%;
+  max-width: 56rem;
+  min-height: 100vh;
+  
+  margin: 0 auto;
+  padding: 2rem clamp(1.25rem, 5vw, 3rem);
+  
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* اللابتوب والشاشات الكبيرة */
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* الجوال */
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+}
+
+
+
+
 
     /* شارة صغيرة أعلى العنوان */
     .eyebrow {
