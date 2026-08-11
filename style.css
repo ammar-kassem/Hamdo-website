@@ -834,6 +834,78 @@
     .r-connector, .r-connector__path { animation: none; }
   }
 
+
+ /* كود مضاف اضافة لاجل السلايدر*/
+/* حاوية الأسهم + السلايدر */
+  .revamp__nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 78rem;
+    margin: 0 auto;
+  }
+
+  .revamp__arrow {
+    flex: 0 0 auto;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--gold-light, #f4e3a1), var(--gold, #d4af37));
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.45), 0 5px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .revamp__arrow:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.7), 0 5px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .revamp__arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+  }
+
+  @media (min-width: 640px) {
+    .revamp__arrow { display: inline-flex; }
+  }
+
+  /* جملة المتابعين الزجاجية (تظهر على الجوال فقط، فوق نقطة تقاطع الخط) */
+  .revamp__pair { position: relative; }
+
+  .r-follow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.68rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+    color: #fff8e6;
+    background: linear-gradient(135deg, rgba(244, 227, 161, 0.3), rgba(212, 175, 55, 0.22));
+    border: 1px solid rgba(212, 175, 55, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), 0 0 12px rgba(212, 175, 55, 0.35);
+  }
+
+  @media (max-width: 859px) {
+    .r-follow { display: inline-flex; }
+  }
+
   
   
   /* ========================================

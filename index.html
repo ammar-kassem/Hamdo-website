@@ -428,7 +428,6 @@
 <!-- ========== قسم: تحوّل العملاء (Slider) ========== -->
 <section class="revamp">
 
-  <!-- تعريف مشترك للتدرج الذهبي -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
       <linearGradient id="revampGoldV" x1="0" y1="0" x2="0" y2="1">
@@ -450,172 +449,164 @@
     <p class="revamp__sub">نتائج حقيقية قبل وبعد تطبيق النظام</p>
   </div>
 
-  <div class="revamp__slider" data-revamp-slider>
-    <div class="revamp__track" data-revamp-track>
+  <div class="revamp__nav">
+    <button class="revamp__arrow revamp__arrow--prev" data-revamp-prev aria-label="السابق">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M15 5l-7 7 7 7" stroke="#201603" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
 
-      <!-- الحالة 1 -->
-      <div class="revamp__slide" data-revamp-slide>
-        <span class="revamp__badge">01</span>
-        <div class="revamp__pair">
-          <figure class="r-photo">
-            <img src="img/1p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--before">قبل</span>
-          </figure>
-          <span class="r-connector" aria-hidden="true">
-            <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
-              <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124"
-                    fill="none" stroke="url(#revampGoldV)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-            <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
-              <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30"
-                    fill="none" stroke="url(#revampGoldH)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-          </span>
-          <figure class="r-photo">
-            <img src="img/1a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--after">بعد</span>
-          </figure>
+    <div class="revamp__slider" data-revamp-slider>
+      <div class="revamp__track" data-revamp-track>
+
+        <!-- الحالة 1 -->
+        <div class="revamp__slide" data-revamp-slide>
+          <span class="revamp__badge">01</span>
+          <div class="revamp__pair">
+            <span class="r-follow">أكثر من 120K متابع</span>
+            <figure class="r-photo">
+              <img src="img/1p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--before">قبل</span>
+            </figure>
+            <span class="r-connector" aria-hidden="true">
+              <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
+                <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124" fill="none" stroke="url(#revampGoldV)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+              <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
+                <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30" fill="none" stroke="url(#revampGoldH)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+            </span>
+            <figure class="r-photo">
+              <img src="img/1a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--after">بعد</span>
+            </figure>
+          </div>
         </div>
-      </div>
 
-      <!-- الحالة 2 -->
-      <div class="revamp__slide" data-revamp-slide>
-        <span class="revamp__badge">02</span>
-        <div class="revamp__pair">
-          <figure class="r-photo">
-            <img src="img/2p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--before">قبل</span>
-          </figure>
-          <span class="r-connector" aria-hidden="true">
-            <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
-              <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124"
-                    fill="none" stroke="url(#revampGoldV)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-            <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
-              <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30"
-                    fill="none" stroke="url(#revampGoldH)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-          </span>
-          <figure class="r-photo">
-            <img src="img/2a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--after">بعد</span>
-          </figure>
+        <!-- الحالة 2 -->
+        <div class="revamp__slide" data-revamp-slide>
+          <span class="revamp__badge">02</span>
+          <div class="revamp__pair">
+            <span class="r-follow">أكثر من 120K متابع</span>
+            <figure class="r-photo">
+              <img src="img/2p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--before">قبل</span>
+            </figure>
+            <span class="r-connector" aria-hidden="true">
+              <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
+                <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124" fill="none" stroke="url(#revampGoldV)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+              <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
+                <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30" fill="none" stroke="url(#revampGoldH)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+            </span>
+            <figure class="r-photo">
+              <img src="img/2a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--after">بعد</span>
+            </figure>
+          </div>
         </div>
-      </div>
 
-      <!-- الحالة 3 -->
-      <div class="revamp__slide" data-revamp-slide>
-        <span class="revamp__badge">03</span>
-        <div class="revamp__pair">
-          <figure class="r-photo">
-            <img src="img/3p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--before">قبل</span>
-          </figure>
-          <span class="r-connector" aria-hidden="true">
-            <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
-              <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124"
-                    fill="none" stroke="url(#revampGoldV)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-            <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
-              <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30"
-                    fill="none" stroke="url(#revampGoldH)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-          </span>
-          <figure class="r-photo">
-            <img src="img/3a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--after">بعد</span>
-          </figure>
+        <!-- الحالة 3 -->
+        <div class="revamp__slide" data-revamp-slide>
+          <span class="revamp__badge">03</span>
+          <div class="revamp__pair">
+            <span class="r-follow">أكثر من 120K متابع</span>
+            <figure class="r-photo">
+              <img src="img/3p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--before">قبل</span>
+            </figure>
+            <span class="r-connector" aria-hidden="true">
+              <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
+                <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124" fill="none" stroke="url(#revampGoldV)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+              <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
+                <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30" fill="none" stroke="url(#revampGoldH)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+            </span>
+            <figure class="r-photo">
+              <img src="img/3a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--after">بعد</span>
+            </figure>
+          </div>
         </div>
-      </div>
 
-      <!-- الحالة 4 -->
-      <div class="revamp__slide" data-revamp-slide>
-        <span class="revamp__badge">04</span>
-        <div class="revamp__pair">
-          <figure class="r-photo">
-            <img src="img/4p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--before">قبل</span>
-          </figure>
-          <span class="r-connector" aria-hidden="true">
-            <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
-              <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124"
-                    fill="none" stroke="url(#revampGoldV)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-            <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
-              <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30"
-                    fill="none" stroke="url(#revampGoldH)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-          </span>
-          <figure class="r-photo">
-            <img src="img/4a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--after">بعد</span>
-          </figure>
+        <!-- الحالة 4 -->
+        <div class="revamp__slide" data-revamp-slide>
+          <span class="revamp__badge">04</span>
+          <div class="revamp__pair">
+            <span class="r-follow">أكثر من 120K متابع</span>
+            <figure class="r-photo">
+              <img src="img/4p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--before">قبل</span>
+            </figure>
+            <span class="r-connector" aria-hidden="true">
+              <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
+                <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124" fill="none" stroke="url(#revampGoldV)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+              <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
+                <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30" fill="none" stroke="url(#revampGoldH)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+            </span>
+            <figure class="r-photo">
+              <img src="img/4a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--after">بعد</span>
+            </figure>
+          </div>
         </div>
-      </div>
 
-      <!-- الحالة 5 -->
-      <div class="revamp__slide" data-revamp-slide>
-        <span class="revamp__badge">05</span>
-        <div class="revamp__pair">
-          <figure class="r-photo">
-            <img src="img/5p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--before">قبل</span>
-          </figure>
-          <span class="r-connector" aria-hidden="true">
-            <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
-              <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124"
-                    fill="none" stroke="url(#revampGoldV)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-            <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
-              <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30"
-                    fill="none" stroke="url(#revampGoldH)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-          </span>
-          <figure class="r-photo">
-            <img src="img/5a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--after">بعد</span>
-          </figure>
+        <!-- الحالة 5 -->
+        <div class="revamp__slide" data-revamp-slide>
+          <span class="revamp__badge">05</span>
+          <div class="revamp__pair">
+            <span class="r-follow">أكثر من 120K متابع</span>
+            <figure class="r-photo">
+              <img src="img/5p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--before">قبل</span>
+            </figure>
+            <span class="r-connector" aria-hidden="true">
+              <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
+                <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124" fill="none" stroke="url(#revampGoldV)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+              <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
+                <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30" fill="none" stroke="url(#revampGoldH)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+            </span>
+            <figure class="r-photo">
+              <img src="img/5a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--after">بعد</span>
+            </figure>
+          </div>
         </div>
-      </div>
 
-      <!-- الحالة 6 -->
-      <div class="revamp__slide" data-revamp-slide>
-        <span class="revamp__badge">06</span>
-        <div class="revamp__pair">
-          <figure class="r-photo">
-            <img src="img/6p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--before">قبل</span>
-          </figure>
-          <span class="r-connector" aria-hidden="true">
-            <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
-              <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124"
-                    fill="none" stroke="url(#revampGoldV)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-            <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
-              <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30"
-                    fill="none" stroke="url(#revampGoldH)" stroke-width="3"
-                    stroke-linecap="round" class="r-connector__path"/>
-            </svg>
-          </span>
-          <figure class="r-photo">
-            <img src="img/6a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
-            <span class="r-tag r-tag--after">بعد</span>
-          </figure>
+        <!-- الحالة 6 -->
+        <div class="revamp__slide" data-revamp-slide>
+          <span class="revamp__badge">06</span>
+          <div class="revamp__pair">
+            <span class="r-follow">أكثر من 120K متابع</span>
+            <figure class="r-photo">
+              <img src="img/6p.jpg" alt="الحساب قبل" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--before">قبل</span>
+            </figure>
+            <span class="r-connector" aria-hidden="true">
+              <svg class="r-connector__svg r-connector__svg--v" viewBox="0 0 60 130" preserveAspectRatio="none">
+                <path d="M30,4 C52,22 8,38 30,52 C52,66 8,82 30,96 C48,108 12,116 30,124" fill="none" stroke="url(#revampGoldV)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+              <svg class="r-connector__svg r-connector__svg--h" viewBox="0 0 130 60" preserveAspectRatio="none">
+                <path d="M126,30 C104,12 92,48 66,30 C40,12 28,48 4,30" fill="none" stroke="url(#revampGoldH)" stroke-width="3" stroke-linecap="round" class="r-connector__path"/>
+              </svg>
+            </span>
+            <figure class="r-photo">
+              <img src="img/6a.jpg" alt="الحساب بعد" loading="lazy" decoding="async">
+              <span class="r-tag r-tag--after">بعد</span>
+            </figure>
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
+
+    <button class="revamp__arrow revamp__arrow--next" data-revamp-next aria-label="التالي">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M9 5l7 7-7 7" stroke="#201603" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
   </div>
 
   <div class="revamp__dots" data-revamp-dots></div>
