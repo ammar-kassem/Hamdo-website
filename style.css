@@ -626,33 +626,35 @@
   
   
 
-/* ========================================
-     قسم: تحوّل العملاء
+
+
+  /* ========================================
+     قسم: تحوّل العملاء (سلايدر)
   ======================================== */
-  .transform {
+  .revamp {
     position: relative;
     z-index: 1;
     width: 100%;
-    padding: clamp(2.75rem, 7vw, 4.5rem) clamp(1.25rem, 5vw, 3rem);
+    padding: clamp(2.75rem, 7vw, 4.5rem) 0;
   }
 
-  .transform__head {
+  .revamp__head {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: clamp(2.25rem, 6vw, 3.5rem);
+    padding: 0 clamp(1.25rem, 5vw, 3rem);
+    margin-bottom: clamp(2rem, 5vw, 3rem);
   }
 
-  .transform__title {
+  .revamp__title {
     margin: 0;
-    font-family: 'Noto Kufi Arabic', sans-serif;
     font-weight: 700;
     font-size: clamp(1.4rem, 0.95rem + 1.8vw, 2.2rem);
     color: #ffffff;
   }
 
-  .transform__divider {
+  .revamp__divider {
     display: block;
     width: 64px;
     height: 3px;
@@ -661,95 +663,107 @@
     background: linear-gradient(90deg, transparent, var(--gold, #d4af37), transparent);
   }
 
-  .transform__sub {
+  .revamp__sub {
     margin: 0.85rem 0 0;
-    font-family: 'Noto Kufi Arabic', sans-serif;
     font-weight: 300;
     font-size: clamp(0.8rem, 1.6vw, 0.95rem);
     color: rgba(255, 255, 255, 0.55);
   }
 
-  .transform__list {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(2.5rem, 6vw, 3.5rem);
-    max-width: 64rem;
+  /* ===== السلايدر ===== */
+  .revamp__slider {
+    direction: ltr;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 78rem;
     margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 2rem);
   }
 
-  .t-case {
+  .revamp__track {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-sizing: border-box;
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform;
   }
 
-  .t-case__name {
-    margin: clamp(0.9rem, 2vw, 1.2rem) 0 0;
+  .revamp__slide {
+    direction: rtl;
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.35rem 0.5rem;
+  }
+
+  .revamp__badge {
+    position: absolute;
+    top: 0;
+    right: clamp(1.25rem, 5vw, 2rem);
     font-family: 'Cinzel', serif;
-    font-weight: 500;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: var(--gold-light, #f4e3a1);
+    opacity: 0.7;
   }
 
-  /* الأزواج: عمودي على الجوال */
-  .t-pair {
+  .revamp__pair {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     width: 100%;
   }
 
-  /* الصورة: عرض طبيعي حسب أبعادها الأصلية + ارتفاع موحّد لكل الصور */
-.t-photo {
-  position: relative;
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  max-width: min(420px, 80vw);
-  height: clamp(150px, 24vw, 200px);
-  border-radius: 10px;
-  overflow: hidden;
-  background: #141414;
-  border: 1px solid rgba(212, 175, 55, 0.16);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
-}
+  .r-photo {
+    position: relative;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: min(340px, 82vw);
+    height: clamp(160px, 30vw, 220px);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #141414;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.5);
+  }
 
-.t-photo img {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
-}
+  .r-photo img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+  }
 
-  .t-tag {
+  .r-tag {
     position: absolute;
     bottom: 8px;
     right: 8px;
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
-    padding: 0.3rem 0.85rem;
+    padding: 0.28rem 0.8rem;
     border-radius: 999px;
-    font-family: 'Noto Kufi Arabic', sans-serif;
     font-weight: 700;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     letter-spacing: 0.4px;
     color: #ffffff;
     backdrop-filter: blur(4px);
   }
 
-  .t-tag--before {
+  .r-tag--before {
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.25);
   }
 
-  /* شكل أوضح واحترافي لعلامة "بعد" */
-  .t-tag--after {
+  .r-tag--after {
     color: #201603;
     font-weight: 800;
     background: linear-gradient(135deg, var(--gold-light, #f4e3a1), var(--gold, #d4af37));
@@ -757,76 +771,391 @@
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.55), 0 2px 6px rgba(0, 0, 0, 0.35);
   }
 
-  .t-tag--after::before {
-    content: "";
-    width: 12px;
-    height: 12px;
-    flex: 0 0 auto;
-    background: #201603;
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M5 12.5L9.5 17L19 7' stroke='%23000' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M5 12.5L9.5 17L19 7' stroke='%23000' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-  }
-
-  /* الموصل الذهبي (خط متعرج) — مسافة أقصر بين الصورتين */
-  .t-connector {
+  .r-connector {
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.65));
-    animation: connector-pulse 2.2s ease-in-out infinite;
+    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.6));
+    animation: r-pulse 2.2s ease-in-out infinite;
   }
 
-  .t-connector__svg--v {
-    width: clamp(28px, 7vw, 38px);
-    height: 60px;
-    display: block;
+  .r-connector__svg--v { width: clamp(26px, 6vw, 34px); height: 46px; display: block; }
+  .r-connector__svg--h { display: none; }
+
+  .r-connector__path {
+    stroke-dasharray: 8 8;
+    animation: r-flow 1.4s linear infinite;
   }
 
-  .t-connector__svg--h {
-    display: none;
-  }
+  @keyframes r-flow { to { stroke-dashoffset: -32; } }
 
-  .t-connector__path {
-    stroke-dasharray: 7 7;
-    animation: connector-flow 1.4s linear infinite;
-  }
-
-  @keyframes connector-flow {
-    to { stroke-dashoffset: -28; }
-  }
-
-  @keyframes connector-pulse {
+  @keyframes r-pulse {
     0%, 100% { filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5)); }
     50%      { filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.9)); }
   }
 
-  /* ========== من مقاس اللابتوب فما فوق: جنباً إلى جنب ========== */
-@media (min-width: 860px) {
-    .t-pair {
-      flex-direction: row;
-      justify-content: center;
-      gap: clamp(1rem, 3vw, 2rem);
-    }
-
-    .t-photo {
-      height: clamp(160px, 15vw, 210px);
-      max-width: none;
-    }
-
-    .t-connector__svg--v { display: none; }
-    .t-connector__svg--h {
-      display: block;
-      width: 64px;
-      height: clamp(38px, 5vw, 50px);
-    }
+  /* ===== النقاط ===== */
+  .revamp__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: clamp(1.5rem, 4vw, 2rem);
   }
+
+  .revamp__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: width 0.3s ease, background 0.3s ease;
+  }
+
+  .revamp__dot.is-active {
+    width: 22px;
+    background: linear-gradient(90deg, var(--gold-light, #f4e3a1), var(--gold, #d4af37));
+  }
+
+  /* ===== من مقاس اللابتوب: 4 عملاء بنفس الوقت ===== */
+  @media (min-width: 860px) {
+    .revamp__pair { flex-direction: row; justify-content: center; gap: clamp(0.6rem, 1.5vw, 1.2rem); }
+
+    .r-photo { height: clamp(150px, 11vw, 190px); max-width: none; }
+
+    .r-connector__svg--v { display: none; }
+    .r-connector__svg--h { display: block; width: 40px; height: clamp(32px, 3.5vw, 42px); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .t-connector,
-    .t-connector__path {
+    .revamp__track { transition: none; }
+    .r-connector, .r-connector__path { animation: none; }
+  }
+
+  
+  
+  /* ========================================
+     قسم: ماذا قال عنّا المبدعين
+  ======================================== */
+  .quotes {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: clamp(2.75rem, 7vw, 4.5rem) 0;
+  }
+
+  .quotes__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 clamp(1.25rem, 5vw, 3rem);
+    margin-bottom: clamp(2.5rem, 6vw, 3.75rem);
+  }
+
+  .quotes__title {
+    margin: 0;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 0.95rem + 1.8vw, 2.2rem);
+    color: #ffffff;
+  }
+
+  .quotes__divider {
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin-top: 0.9rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, var(--gold, #d4af37), transparent);
+  }
+
+  /* ===== الحاوية + أزرار التنقل ===== */
+  .quotes__slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 clamp(0.5rem, 3vw, 2rem);
+  }
+
+  .quotes__arrow {
+    flex: 0 0 auto;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--gold-light, #f4e3a1), var(--gold, #d4af37));
+    box-shadow: 0 0 14px rgba(212, 175, 55, 0.45), 0 6px 14px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .quotes__arrow:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.7), 0 6px 14px rgba(0, 0, 0, 0.4);
+  }
+
+  /* ===== منفذ العرض ===== */
+  .quotes__viewport {
+    direction: ltr;
+    flex: 1 1 auto;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 4%, #000 96%, transparent 100%);
+  }
+
+  .quotes__viewport::-webkit-scrollbar { display: none; }
+
+  .quotes__track {
+    display: flex;
+    gap: clamp(1rem, 3vw, 1.75rem);
+    padding: 1.5rem clamp(4vw, 8vw, 10vw);
+  }
+
+  /* ===== بطاقة الاقتباس ===== */
+  .q-card {
+    direction: rtl;
+    flex: 0 0 auto;
+    width: clamp(240px, 76vw, 320px);
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .q-card__bubble {
+    position: relative;
+    width: 100%;
+    padding: clamp(1.5rem, 4vw, 1.9rem) clamp(1.25rem, 3.5vw, 1.6rem) clamp(1.6rem, 4vw, 2rem);
+    background: #1c1c1e;
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 20px;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.5);
+  }
+
+  .q-card__mark {
+    position: absolute;
+    top: -22px;
+    right: 18px;
+    font-family: 'Cinzel', serif;
+    font-size: 3.2rem;
+    line-height: 1;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--gold-light, #f4e3a1), var(--gold, #d4af37) 55%, var(--gold-dark, #8a6a1c));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
+    user-select: none;
+  }
+
+  .q-card__text {
+    margin: 0;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    line-height: 1.9;
+    color: #ffffff;
+    text-align: right;
+  }
+
+  /* ذيل الفقاعة: مربع مدوّر مائل يربط الفقاعة بالصورة */
+  .q-card__tail {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    transform: translateX(-50%) rotate(45deg);
+    background: #1c1c1e;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+    border-left: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 0 0 0 5px;
+  }
+
+  .q-card__person {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: -20px;
+  }
+
+  .q-card__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 999px;
+    object-fit: cover;
+    display: block;
+    border: 2.5px solid var(--gold, #d4af37);
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.5), 0 4px 10px rgba(0, 0, 0, 0.4);
+    background: #141414;
+  }
+
+  .q-card__name {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* ===== النقاط ===== */
+  .quotes__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .quotes__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease, width 0.25s ease;
+  }
+
+  .quotes__dot.is-active {
+    width: 22px;
+    background: linear-gradient(90deg, var(--gold-light, #f4e3a1), var(--gold, #d4af37));
+  }
+
+  /* ===== من مقاس اللابتوب: إظهار الأسهم ===== */
+  @media (min-width: 860px) {
+    .quotes__arrow { display: inline-flex; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .quotes__viewport { scroll-behavior: auto; }
+  }
+  
+  
+  
+  
+  /* ========================================
+     الفوتر
+  ======================================== */
+  .site-footer {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: clamp(2.5rem, 6vw, 3.5rem) clamp(1.25rem, 5vw, 3rem) clamp(2rem, 5vw, 2.75rem);
+    overflow: hidden;
+  }
+
+  /* خط علوي ذهبي متحرك يفصل الفوتر */
+  .site-footer__seam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(212, 175, 55, 0.55) 20%,
+        var(--gold-light, #f4e3a1) 50%,
+        rgba(212, 175, 55, 0.55) 80%,
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: seam-glow 6s ease-in-out infinite;
+  }
+
+  @keyframes seam-glow {
+    0%, 100% { background-position: 0% 0%; opacity: 0.6; }
+    50%      { background-position: 100% 0%; opacity: 1; }
+  }
+
+  .site-footer__inner {
+    max-width: 48rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: clamp(1.1rem, 3vw, 1.5rem);
+  }
+
+  /* الشعار */
+  .site-footer__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-footer__name {
+    font-weight: 600;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    letter-spacing: 0.3px;
+    background: linear-gradient(135deg, var(--gold-light, #f4e3a1), var(--gold, #d4af37) 55%, var(--gold-dark, #8a6a1c));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* روابط التواصل */
+  .site-footer__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.6rem, 2vw, 0.85rem);
+  }
+
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .social-btn:hover {
+    color: #201603;
+    transform: translateY(-4px) scale(1.06);
+    background: linear-gradient(135deg, var(--gold-light, #f4e3a1), var(--gold, #d4af37));
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.6), 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-color: transparent;
+  }
+
+  .social-btn:focus-visible {
+    outline: 2px solid var(--gold-light, #f4e3a1);
+    outline-offset: 3px;
+  }
+
+  /* الحقوق */
+  .site-footer__copy {
+    margin: 0;
+    font-weight: 300;
+    font-size: clamp(0.72rem, 1.6vw, 0.82rem);
+    letter-spacing: 0.2px;
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-footer__seam {
       animation: none;
     }
   }
