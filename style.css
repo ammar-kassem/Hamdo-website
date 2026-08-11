@@ -914,7 +914,59 @@
     .r-connector__svg--v { display: none; }
     .r-connector__svg--h { display: block; width: 40px; height: clamp(32px, 3.5vw, 42px); }
   }
+/* يتطبق هذا الكود فقط على شاشات الديسكتوب الكبيرة */
+@media (min-width: 1024px) {
+    /* 1. تمديد حاوية السلايدر لتستوعب 6 شاشات كاملة أفقياً */
+    .revamp__track[data-revamp-track] {
+        width: 600% !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+    }
 
+    /* 2. جعل الكرت الواحد (قبل وبعد) يأخذ عرض الشاشة الكاملة 100% */
+    .revamp__slide[data-revamp-slide] {
+        flex: 0 0 16.66667% !important;
+        width: 16.66667% !important;
+        max-width: 16.66667% !important;
+        min-width: 16.66667% !important;
+        padding: 0 40px !important; /* مسافة أمان لمنع الالتصاق بالحواف */
+        box-sizing: border-box !important;
+    }
+
+    /* 3. تنسيق الصورتين لتبدوان بجانب بعضهما بشكل متناسق وموسط */
+    .revamp__pair {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 1200px !important; /* لمنع التمدد المفرط على الشاشات العملاقة */
+        margin: 0 auto !important;
+        gap: 30px !important;
+    }
+
+    /* 4. إعطاء الصورتين مساحة مرنة ومتساوية لتكبير تفاصيل الحساب */
+    .revamp__pair figure, .r-photo {
+        flex: 1 !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* 5. ضبط أبعاد الصور لعرض ممتاز ومريح للعين */
+    .revamp__pair img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 550px !important; /* حد أقصى للارتفاع لعدم الخروج عن إطار الشاشة */
+        object-fit: contain !important;
+    }
+
+    /* 6. ضبط خط الربط الذهبي ليتوسط المسافة تماماً */
+    .r-connector {
+        flex: 0 0 100px !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
   
   
   /* ========================================
