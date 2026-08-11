@@ -905,6 +905,15 @@
   @media (max-width: 859px) {
     .r-follow { display: inline-flex; }
   }
+  /* ===== من مقاس اللابتوب: 4 عملاء بنفس الوقت ===== */
+  @media (min-width: 860px) {
+    .revamp__pair { flex-direction: row; justify-content: center; gap: clamp(0.6rem, 1.5vw, 1.2rem); }
+
+    .r-photo { max-width: none; } /* حذفنا تحديد height هنا، فترث نفس ارتفاع الجوال تلقائياً */
+
+    .r-connector__svg--v { display: none; }
+    .r-connector__svg--h { display: block; width: 40px; height: clamp(32px, 3.5vw, 42px); }
+  }
 
   
   
@@ -945,13 +954,15 @@
   }
 
   /* ===== الحاوية + أزرار التنقل ===== */
-  .quotes__slider {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0 clamp(0.5rem, 3vw, 2rem);
-  }
+.quotes__slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 0 clamp(0.5rem, 3vw, 2rem);
+}
 
   .quotes__arrow {
     flex: 0 0 auto;
